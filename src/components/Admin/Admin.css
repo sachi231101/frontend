@@ -1,0 +1,72 @@
+.admin-panel {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    background-color: #ffffff; /* Light gray background */
+}
+
+.admin-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333; /* Dark gray text */
+}
+
+.filter-section {
+    margin-bottom: 15px;
+}
+
+.dropdown {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 3px;
+}
+
+.feedback-type-section {
+    margin-top: 20px;
+}
+
+.feedback-type {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.toggle-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #fff; /* White text */
+}
+
+.toggle-button.enabled {
+    background-color: #4caf50; /* Green background */
+}
+
+.toggle-button.disabled {
+    background-color: #f44336; /* Red background */
+}
+
+.feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.feedback-table th,
+.feedback-table td {
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 5px; /* Reduced padding */
+    text-align: left;
+    font-size: 10px; /* Smaller font size */
+}
+
+.feedback-table th {
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text */
+}

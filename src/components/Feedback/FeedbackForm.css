@@ -1,0 +1,298 @@
+.feedback-form-container {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    background-color: #f5f5f5; /* Light gray background */
+}
+.form-group1{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+    .feedback-instructions{
+        font-size: 14px;
+        color: #2f2f2f;
+        margin-bottom: 10px;
+        width: 600px;
+
+        tr td{
+            padding: 2px;
+            height: 15px;
+        }
+    }
+
+}
+
+.feedback-form {
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    background-color: #fff; /* White background */
+}
+
+.form-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #2f2f2f; /* Dark gray text */
+    text-align: center;
+}
+
+.course-info {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #333; /* Dark gray text */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.dropdown {
+    margin-left: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 3px;
+}
+
+.feedback-type-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.feedback-type-button {
+    padding: 5px 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text */
+}
+
+.feedback-type-button.active {
+    background-color: #555; /* Slightly lighter gray */
+}
+
+.feedback-type-button:disabled {
+    background-color: #ccc; /* Light gray background */
+    color: #666; /* Dark gray text */
+    cursor: not-allowed;
+}
+
+.feedback-form select, 
+.feedback-form textarea {
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: #fff; /* White background */
+}
+
+.feedback-form input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 2px;
+    font-size: 12px;
+    background-color: #fff; /* White background */
+    -moz-appearance: textfield; /* For Firefox */
+}
+
+/* Remove arrow marks for number input fields */
+.feedback-form input[type="number"]::-webkit-inner-spin-button,
+.feedback-form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.feedback-form button {
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text */
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.feedback-form select:focus, 
+.feedback-form input[type="number"]:focus, 
+.feedback-form textarea:focus, 
+.feedback-form button:focus {
+    outline: none;
+    border-color: #555; /* Darker border on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.feedback-form textarea {
+    min-height: 10px;
+}
+
+/* Ensure the table layout is responsive */
+.feedback-form table {
+    width: 100%; /* Ensure the table takes full width of the container */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    table-layout: auto; /* Allow columns to adjust dynamically */
+    min-width: unset; /* Remove fixed minimum width */
+    max-width: 100%; /* Ensure the table doesn't exceed container width */
+}
+
+/* Sticky positioning for Q No and Questions columns */
+.feedback-form table th#q-no,
+.feedback-form table th#questions {
+    position: sticky;
+    left: 0;
+    top: 0; /* Ensure it sticks to the top */
+    background-color: #333; /* Dark gray background */
+    z-index: 4; /* Higher z-index to stay above subject th elements */
+    border: 1px solid #ccc; /* Light gray border */
+}
+
+/* Sticky positioning for subject columns */
+.feedback-form table th {
+    position: sticky;
+    top: 0; /* Ensure it sticks to the top */
+    z-index: 3; /* Lower z-index than questions th */
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+}
+
+.feedback-form table td#q-no,
+.feedback-form table td#questions {
+    position: sticky;
+    left: 0;
+    font-size: 13px;
+    background-color: #ffffff; /* Match the table background */
+    z-index: 2; /* Lower z-index than th elements */
+    border: 2px solid #ccc; /* Light gray border */
+}
+
+/* Adjust column widths for questions and input fields */
+.feedback-form table th#q-no,
+.feedback-form table td#q-no {
+    width: 20px; /* Fixed width for question number */
+    text-align: center;
+}
+
+.feedback-form table th#questions,
+.feedback-form table td#questions {
+    width: 310px; /* Fixed width for questions */
+    text-align: left; /* Align text to the left */
+}
+
+/* Horizontal scrolling for input fields */
+.feedback-form table th,
+.feedback-form table td {
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 0px;
+    text-align: center;
+    word-wrap: break-word; /* Ensure long text wraps */
+}
+
+/* Ensure the table container has a defined height and scrollable overflow */
+.feedback-form {
+    max-height: 500px; /* Limit the height of the table */
+    overflow-y: auto; /* Add vertical scroll bar */
+    overflow-x: auto; /* Add horizontal scroll bar for wide tables */
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 6px; /* Add padding inside the scrollable container */
+    position: relative;
+    
+}
+.table-container {
+    max-height: 500px; /* Limit the height of the table */
+    overflow-y: auto; /* Add vertical scroll bar */
+    overflow-x: auto; /* Add horizontal scroll bar for wide tables */
+    border: 1px solid #ccc; /* Light gray border */
+    position: relative;
+    width: 100%; /* Ensure the container takes full width */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+/* Styling for the input fields */
+.feedback-form table td input {
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 3px;
+    background-color: #fff; /* White background */
+}
+
+.feedback-form button:hover {
+    background-color: #555; /* Slightly lighter gray */
+    color: #fff; /* White text */
+}
+
+@media (max-width: 768px) {
+    .feedback-form {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .feedback-form h3 {
+        font-size: 18px;
+    }
+
+    .feedback-form label {
+        font-size: 14px;
+    }
+    .feedback-form table th#questions,
+    .feedback-form table td#questions {
+        width: 200px; /* Reduced width for questions on smaller screens */
+        text-align: left; /* Align text to the left */
+    }
+
+    .feedback-form select, 
+    .feedback-form textarea, 
+    .feedback-form input[type="number"] {
+        width: 70%; /* Full width for smaller screens */
+        font-size: 14px;
+    }
+
+    .feedback-form button {
+        width: 90%; /* Full width for buttons */
+        font-size: 14px;
+    }
+
+    .feedback-form table {
+        font-size: 12px;
+        min-width: unset; /* Remove fixed minimum width for smaller screens */
+        max-width: 100%; /* Ensure the table fits within the container */
+    }
+
+    .feedback-form table th, 
+    .feedback-form table td {
+        padding: 4px; /* Reduce padding for smaller screens */
+    }
+
+    .feedback-form textarea {
+        height: 60px; /* Adjust height for smaller screens */
+    }
+
+    .feedback-form .table-container {
+        max-height: 400px; /* Adjust height for smaller screens */
+        overflow-x: auto; /* Ensure horizontal scrolling for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-form {
+        padding: 10px;
+        font-size: 12px;
+    }
+    .feedback-form table th#questions,
+    .feedback-form table td#questions {
+        width: 150px; /* Fixed width for questions */
+        text-align: left; /* Align text to the left */
+    }
+    
+}
