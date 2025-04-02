@@ -14,7 +14,7 @@ const Admin = () => {
     // Fetch all feedbacks
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/feedback/getFeedbacks'); // Corrected URL
+        const response = await axios.get('http://10.22.2.17:5000/api/feedback/getFeedbacks'); // Corrected URL
         setFeedbacks(response.data || []);
       } catch (error) {
         console.error('Error fetching feedbacks:', error.message);
@@ -27,7 +27,7 @@ const Admin = () => {
   useEffect(() => {
     const fetchFeedbackTypeStatuses = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/admin/feedback-type-status');
+        const response = await axios.get('http://10.22.2.17:5000/api/admin/feedback-type-status');
         setFeedbackTypeStatuses(response.data || []);
       } catch (error) {
         console.error('Error fetching feedback type statuses:', error.message);
@@ -39,7 +39,7 @@ const Admin = () => {
 
   const toggleFeedbackTypeStatus = async (type, enabled) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/admin/feedback-type-status', {
+      const response = await axios.post('http://10.22.2.17:5000/api/admin/feedback-type-status', {
         type,
         enabled,
       });

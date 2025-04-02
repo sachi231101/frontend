@@ -27,7 +27,7 @@ const AddStudentData = () => {
   // Submit data to backend
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/addstudents/addStudents', {
+      const response = await axios.post('http://10.22.2.17:5000/api/addstudents/addStudents', {
         students: excelData, // Wrap data in an object
       });
 

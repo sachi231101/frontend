@@ -20,11 +20,11 @@ const FeedbackViewer = () => {
         // Fetch courses, professors, and semesters
         const fetchData = async () => {
             try {
-                const coursesAndProfessorsResponse = await axios.get('http://localhost:5000/api/feedback/courses-and-professors');
+                const coursesAndProfessorsResponse = await axios.get('http://10.22.2.17:5000/api/feedback/courses-and-professors');
                 setCourses(coursesAndProfessorsResponse.data.courses || []);
                 setProfessors(coursesAndProfessorsResponse.data.professors || []);
 
-                const semestersResponse = await axios.get('http://localhost:5000/api/feedback/semesters');
+                const semestersResponse = await axios.get('http://10.22.2.17:5000/api/feedback/semesters');
                 setSemesters(semestersResponse.data || []); // Set semesters
             } catch (error) {
                 console.error('Error fetching data:', error.message);
@@ -42,7 +42,7 @@ const FeedbackViewer = () => {
             }
 
             try {
-                const response = await axios.get('http://localhost:5000/api/feedback/professors-by-course', {
+                const response = await axios.get('http://10.22.2.17:5000/api/feedback/professors-by-course', {
                     params: { course }, // Send the selected course to the backend
                 });
                 setProfessors(response.data || []); // Set professors for the selected course
@@ -63,7 +63,7 @@ const FeedbackViewer = () => {
             }
 
             try {
-                const response = await axios.get('http://localhost:5000/api/feedback/semesters-by-course', {
+                const response = await axios.get('http://10.22.2.17:5000/api/feedback/semesters-by-course', {
                     params: { course }, // Send the selected course to the backend
                 });
                 setSemesters(response.data || []); // Set semesters for the selected course
@@ -79,7 +79,7 @@ const FeedbackViewer = () => {
         // Fetch years
         const fetchYears = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/feedback/years');
+                const response = await axios.get('http://10.22.2.17:5000/api/feedback/years');
                 setYears(response.data || []); // Set available years
             } catch (error) {
                 console.error('Error fetching years:', error.message);
@@ -92,7 +92,7 @@ const FeedbackViewer = () => {
         // Fetch feedback types
         const fetchFeedbackTypes = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/feedback/feedback-types');
+                const response = await axios.get('http://10.22.2.17:5000/api/feedback/feedback-types');
                 setFeedbackTypes(response.data || []); // Set feedback types
             } catch (error) {
                 console.error('Error fetching feedback types:', error.message);
@@ -103,7 +103,7 @@ const FeedbackViewer = () => {
 
     const handleFilterChange = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/feedback/filtered-feedback-with-average', {
+            const response = await axios.get('http://10.22.2.17:5000/api/feedback/filtered-feedback-with-average', {
                 params: { course, professor: professor || null, semester: semester || null, year, feedbackType }, // Include feedbackType in filters
             });
             console.log('Filtered feedbacks:', response.data); // Debug log to verify data

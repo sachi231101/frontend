@@ -32,7 +32,7 @@ const FeedbackForm = () => {
     useEffect(() => {
         const fetchAcademicYears = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/courses/academic-years', {
+                const response = await axios.get('http://10.22.2.17:5000/api/courses/academic-years', {
                     params: { course: courseName }, // Pass course name as a query parameter
                 });
                 if (response.status === 200 && response.data.academicYears) {
@@ -53,7 +53,7 @@ const FeedbackForm = () => {
 
         const fetchSemesters = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/courses/semesters/${academicYear}`, {
+                const response = await axios.get(`http://10.22.2.17:5000/api/courses/semesters/${academicYear}`, {
                     params: { course: courseName }, // Pass course name as a query parameter
                 });
                 if (response.status === 200 && response.data.semesters) {
@@ -76,13 +76,13 @@ const FeedbackForm = () => {
             try {
                 // Fetch subjects
                 const encodedSemester = encodeURIComponent(semester);
-                const subjectsResponse = await axios.get(`http://localhost:5000/api/courses/subjects/${encodedSemester}`, {
+                const subjectsResponse = await axios.get(`http://10.22.2.17:5000/api/courses/subjects/${encodedSemester}`, {
                     params: { course: courseName }, // Pass course name as a query parameter
                 });
                 const { subjects } = subjectsResponse.data;
 
                 // Fetch questions
-                const questionsResponse = await axios.get(`http://localhost:5000/api/questions/${feedbackType}`);
+                const questionsResponse = await axios.get(`http://10.22.2.17:5000/api/questions/${feedbackType}`);
                 const { questions } = questionsResponse.data;
 
                 // Update state
@@ -107,7 +107,7 @@ const FeedbackForm = () => {
     useEffect(() => {
         const fetchFeedbackTypeStatuses = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/admin/feedback-type-status');
+                const response = await axios.get('http://10.22.2.17:5000/api/admin/feedback-type-status');
                 const statuses = response.data || [];
                 setFeedbackTypeStatuses(statuses);
 
@@ -129,7 +129,7 @@ const FeedbackForm = () => {
 
         if (type === 'Pre-Feedback' || type === 'Post-Feedback') {
             try {
-                const response = await axios.post('http://localhost:5000/api/login', {
+                const response = await axios.post('http://10.22.2.17:5000/api/login', {
                     usn: localStorage.getItem('usn'),
                     password: localStorage.getItem('password'), // Use actual password from localStorage
                 });
@@ -223,7 +223,7 @@ const FeedbackForm = () => {
         console.log('Submitting feedback data:', feedbackData); // Debug log
 
         try {
-            await axios.post('http://localhost:5000/api/feedback/submit-feedback', feedbackData); // Correct endpoint
+            await axios.post('http://10.22.2.17:5000/api/feedback/submit-feedback', feedbackData); // Correct endpoint
             localStorage.setItem(`feedbackSubmitted_${localStorage.getItem('usn')}`, 'true'); // Store feedback status for the specific student
             navigate('/feedback-submitted'); // Use navigate instead of window.location.href
         } catch (error) {

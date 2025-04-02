@@ -46,7 +46,7 @@ const AddCourseData = () => {
             return;
         }
         // Use axios to send the POST request
-        const response = await axios.post('http://localhost:5000/api/addCourse/addCourse', courseData, {
+        const response = await axios.post('http://10.22.2.17:5000/api/addCourse/addCourse', courseData, {
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -76,7 +76,7 @@ const AddCourseData = () => {
             return;
         }
 
-        const response = await axios.put('http://localhost:5000/api/addCourse/updateCourse', courseData, {
+        const response = await axios.put('http://10.22.2.17:5000/api/addCourse/updateCourse', courseData, {
             headers: {
                 'Content-Type': 'application/json',
             },
