@@ -57,7 +57,11 @@ const FeedbackForm = () => {
                     params: { course: courseName }, // Pass course name as a query parameter
                 });
                 if (response.status === 200 && response.data.semesters) {
-                    setSemesters(response.data.semesters);
+                    const normalizedSemesters = response.data.semesters.map((sem) =>
+                        sem.trim().toLowerCase()
+                    );
+                    const uniqueSemesters = [...new Set(normalizedSemesters)]; // Remove duplicates
+                    setSemesters(uniqueSemesters);
                 } else {
                     console.error('Failed to fetch semesters:', response.statusText);
                 }
@@ -292,7 +296,7 @@ const FeedbackForm = () => {
                         </div>
                         <div className="feedback-instructions">
                         <p> <span style={{color:"red",fontSize:"19px"}}>*</span> Please rate each question on a scale of 1-5:</p>
-                        <table>
+                        <table className="feedback-instructions-table" style={{ marginBottom: '10px', width: '200px' }}>
                         <tr id='table-row'>
                             <td>Poor</td> 
                             <td>Fair</td>

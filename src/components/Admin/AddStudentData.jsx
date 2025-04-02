@@ -18,6 +18,8 @@ const AddStudentData = () => {
       const sheetName = workbook.SheetNames[0];
       const sheet = workbook.Sheets[sheetName];
       const parsedData = XLSX.utils.sheet_to_json(sheet);
+
+      console.log('Parsed Data:', parsedData); // Debugging log to check parsed data
       setExcelData(parsedData);
     };
 

@@ -12,15 +12,16 @@
         font-size: 14px;
         color: #2f2f2f;
         margin-bottom: 10px;
-        width: 600px;
-
+        margin-right: 400px;
+        width: 400px;
         tr td{
             padding: 2px;
             height: 15px;
         }
     }
+      
+    }
 
-}
 
 .feedback-form {
     margin: 0 auto;
@@ -135,12 +136,11 @@
 
 /* Ensure the table layout is responsive */
 .feedback-form table {
-    width: 100%; /* Ensure the table takes full width of the container */
+    width: max-content; /* Allow the table to expand horizontally */
     border-collapse: collapse;
     margin-bottom: 20px;
-    table-layout: auto; /* Allow columns to adjust dynamically */
-    min-width: unset; /* Remove fixed minimum width */
-    max-width: 100%; /* Ensure the table doesn't exceed container width */
+    table-layout: fixed; /* Fixed layout for consistent column widths */
+    min-width: 100%; /* Ensure the table takes full width of the container */
 }
 
 /* Sticky positioning for Q No and Questions columns */
@@ -153,10 +153,17 @@
     z-index: 4; /* Higher z-index to stay above subject th elements */
     border: 1px solid #ccc; /* Light gray border */
 }
-
+.feedback-form table th#questions {
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    font-size: 13px;
+    width: 310px; /* Fixed width for questions */
+}
 /* Sticky positioning for subject columns */
 .feedback-form table th {
-    position: sticky;
+    position: sticky;/* Fixed width for subject columns */
     top: 0; /* Ensure it sticks to the top */
     z-index: 3; /* Lower z-index than questions th */
     background-color: #333; /* Dark gray background */
@@ -191,8 +198,9 @@
 /* Horizontal scrolling for input fields */
 .feedback-form table th,
 .feedback-form table td {
+    width: 150px; /* Fixed width for subject columns */
     border: 1px solid #ccc; /* Light gray border */
-    padding: 0px;
+    padding: 1px;
     text-align: center;
     word-wrap: break-word; /* Ensure long text wraps */
 }
@@ -215,6 +223,7 @@
     position: relative;
     width: 100%; /* Ensure the container takes full width */
     box-sizing: border-box; /* Include padding and border in width calculation */
+    display: block; /* Ensure proper scrolling behavior */
 }
 
 /* Styling for the input fields */
@@ -247,7 +256,7 @@
     }
     .feedback-form table th#questions,
     .feedback-form table td#questions {
-        width: 200px; /* Reduced width for questions on smaller screens */
+        width: 300px; /* Reduced width for questions on smaller screens */
         text-align: left; /* Align text to the left */
     }
 
